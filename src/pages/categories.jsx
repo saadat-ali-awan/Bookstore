@@ -1,6 +1,9 @@
 function Categories() {
   return (
-    <div>Categories</div>
+    <div>
+      <div>Categories</div>
+      <button type="button">Check Status</button>
+    </div>
   );
 }
 
