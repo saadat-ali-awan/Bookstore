@@ -7,6 +7,7 @@ function AddBookForm() {
   const [state, setState] = useState({
     title: '',
     author: '',
+    category: '',
   });
 
   const dispatch = useDispatch();
@@ -30,10 +31,11 @@ function AddBookForm() {
 
   const addBookToStore = () => {
     const id = getUniqueId();
-    dispatch(addBook(state.title, state.author, id));
+    dispatch(addBook(state.title, state.author, state.category, id));
     setState({
       title: '',
       author: '',
+      category: '',
     });
   };
 
@@ -46,6 +48,10 @@ function AddBookForm() {
       <label htmlFor="author">
         Author:
         <input type="text" id="author" name="author" value={state.author} onChange={handleChange} />
+      </label>
+      <label htmlFor="category">
+        Category:
+        <input type="text" id="category" name="category" value={state.category} onChange={handleChange} />
       </label>
       <button type="button" onClick={addBookToStore}>Add Book</button>
     </form>
