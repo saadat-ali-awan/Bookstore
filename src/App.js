@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Router>
         <header className="App-header">
-          <h1>Bookstore</h1>
+          <h1>Bookstore CMS</h1>
           <NavMenu />
         </header>
         <Routes>
