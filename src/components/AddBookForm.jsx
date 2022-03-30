@@ -16,7 +16,6 @@ function AddBookForm() {
 
   function handleChange(e) {
     const { id } = e.target;
-    console.log(state);
     setState({
       ...state,
       [id]: e.target.value,
