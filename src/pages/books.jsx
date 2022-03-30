@@ -1,32 +1,25 @@
+import { useSelector, useDispatch } from 'react-redux';
 import AddBookForm from '../components/AddBookForm';
 import Book from '../components/Book';
+import { removeBook } from '../redux/books/books';
 
 function Books() {
-  const list = [
-    {
-      key: 'Item1',
-      title: 'Book 1',
-      author: 'Author 1',
-    },
-    {
-      key: 'Item2',
-      title: 'Book 2',
-      author: 'Author 1',
-    },
-    {
-      key: 'Item3',
-      title: 'Book 3',
-      author: 'Author 2',
-    },
-  ];
+  const list = useSelector((state) => state.booksReducer);
+
+  const dispatch = useDispatch();
+
+  const removeBookFromStore = (id) => {
+    dispatch(removeBook(id));
+  };
+
   return (
     <div>
       <ul>
         {
           list.map((book) => (
-            <li key={book.key}>
-              <Book title={`${book.title}`} author={`${book.author}`} />
-              <button type="button">Remove</button>
+            <li key={`item-${book.id}`}>
+              <Book title={`${book.name}`} author={`${book.author}`} />
+              <button type="button" onClick={() => { removeBookFromStore(book.id); }}>Remove</button>
             </li>
           ))
         }
