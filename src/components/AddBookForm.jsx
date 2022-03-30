@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import uniqid from 'uniqid';
 import { addBook } from '../redux/books/books';
+import styles from './AddBookForm.module.css';
 
 function AddBookForm() {
   const [state, setState] = useState({
@@ -15,6 +16,7 @@ function AddBookForm() {
 
   function handleChange(e) {
     const { id } = e.target;
+    console.log(state);
     setState({
       ...state,
       [id]: e.target.value,
@@ -40,20 +42,21 @@ function AddBookForm() {
   };
 
   return (
-    <form>
-      <label htmlFor="title">
-        Name:
-        <input type="text" id="title" name="title" value={state.title} onChange={handleChange} />
-      </label>
-      <label htmlFor="author">
-        Author:
-        <input type="text" id="author" name="author" value={state.author} onChange={handleChange} />
-      </label>
-      <label htmlFor="category">
-        Category:
-        <input type="text" id="category" name="category" value={state.category} onChange={handleChange} />
-      </label>
-      <button type="button" onClick={addBookToStore}>Add Book</button>
+    <form className={styles.addBookForm}>
+      <input className={styles.title} type="text" id="title" placeholder="Book title" name="title" value={state.title} onChange={handleChange} />
+      <input className={styles.author} type="text" id="author" placeholder="Author" name="author" value={state.author} onChange={handleChange} />
+      <select className={styles.category} name="cars" value={state.category} id="category" onChange={handleChange}>
+        <option value="" disabled>Categories</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Horror">Horror</option>
+        <option value="Detective &amp; Mystery">Detective &amp; Mystery</option>
+        <option value="Romance">Romance</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Dystopian">Dystopian</option>
+        <option value="Science Fiction">Science Fiction</option>
+        <option value="Fantasy">Fantasy</option>
+      </select>
+      <button className={styles['add-button']} type="button" onClick={addBookToStore}>Add Book</button>
     </form>
   );
 }
