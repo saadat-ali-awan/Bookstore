@@ -10,7 +10,7 @@ function NavMenu() {
             to="/"
             className={({ isActive }) => `${styles['nav-link']} ${(isActive ? styles.selected : '')}`}
           >
-            Books
+            BOOKS
           </NavLink>
         </li>
         <li className={styles.listItem}>
@@ -18,7 +18,7 @@ function NavMenu() {
             to="/categories"
             className={({ isActive }) => `${styles['nav-link']} ${(isActive ? styles.selected : '')}`}
           >
-            Categories
+            CATEGORIES
           </NavLink>
         </li>
       </ul>
