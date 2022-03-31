@@ -18,7 +18,9 @@ function Book({
         <div className={styles.Author}>{author}</div>
         <div className={styles.actions}>
           <button type="button">Comments</button>
+          |
           <button type="button" onClick={() => { removeBookFromStore(id); }}>Remove</button>
+          |
           <button type="button">Edit</button>
         </div>
       </div>
