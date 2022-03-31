@@ -3,22 +3,22 @@ import styles from './NavMenu.module.css';
 
 function NavMenu() {
   return (
-    <nav>
-      <ul>
-        <li>
+    <nav className={styles.nav}>
+      <ul className={styles.list}>
+        <li className={styles.listItem}>
           <NavLink
             to="/"
             className={({ isActive }) => `${styles['nav-link']} ${(isActive ? styles.selected : '')}`}
           >
-            Books
+            BOOKS
           </NavLink>
         </li>
-        <li>
+        <li className={styles.listItem}>
           <NavLink
             to="/categories"
             className={({ isActive }) => `${styles['nav-link']} ${(isActive ? styles.selected : '')}`}
           >
-            Categories
+            CATEGORIES
           </NavLink>
         </li>
       </ul>
