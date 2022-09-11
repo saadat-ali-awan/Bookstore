@@ -1,0 +1,46 @@
+.addBookForm {
+  width: 100%;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.title {
+  flex: 2;
+  height: 2.813rem;
+  padding: 0.813rem 1.063rem 0.813rem 1.063rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  margin-right: 1rem;
+}
+
+.author {
+  flex: 1;
+  height: 2.813rem;
+  padding: 0.813rem 1.063rem 0.813rem 1.063rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  margin-right: 1rem;
+}
+
+.category {
+  flex: 1;
+  height: 2.813rem;
+  padding: 0.813rem 1.063rem 0.813rem 1.063rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  margin-right: 1rem;
+}
+
+.add-button {
+  width: 11.5rem;
+  height: 2.813rem;
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
